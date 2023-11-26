@@ -12,4 +12,10 @@ export const theme = {
       900: "#2C2C2C",
     },
   },
+  font: {
+    light: "Montserrat_300Light",
+    regular: "Montserrat_400Regular",
+    semiBold: "Montserrat_600SemiBold",
+    bold: "Montserrat_700Bold",
+  },
 };
