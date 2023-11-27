@@ -23,7 +23,7 @@ export function ProductCard({
         <S.NameAndPriceWrapper>
           <S.Name>{name}</S.Name>
           <S.PriceWrapper>
-            <S.Price>{price}</S.Price>
+            <S.Price>R${price}</S.Price>
           </S.PriceWrapper>
         </S.NameAndPriceWrapper>
         <S.Description>{description}</S.Description>
