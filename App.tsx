@@ -11,8 +11,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import { HomeScreen } from "./src/screens/Home/HomeScreen";
 import { theme } from "./src/global/styles/theme";
+import { Router } from "./src/routers/Router";
 
 const queryClient = new QueryClient();
 
@@ -40,7 +40,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <SafeAreaProvider>
         <ThemeProvider theme={theme}>
-          <HomeScreen />
+          <Router />
         </ThemeProvider>
       </SafeAreaProvider>
     </QueryClientProvider>
