@@ -1,17 +1,15 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 
 import S from "./styles";
 import { ShoppingBagIcon } from "../../../assets/icons/ShoppingBagIcon";
 import { type Product } from "../../services/productService";
 
-type ProductCardProps = Product;
+type ProductCardProps = {
+  product: Product;
+  onBuyButtonPress: (product: Product) => void;
+};
 
-export function ProductCard({
-  description,
-  name,
-  price,
-  photo,
-}: ProductCardProps) {
+export function ProductCard({ onBuyButtonPress, product }: ProductCardProps) {
   return (
     <View>
       <S.Container
@@ -19,16 +17,19 @@ export function ProductCard({
           shadowOffset: { width: 0, height: 1 },
         }}
       >
-        <S.Image source={{ uri: photo }} resizeMode="contain" />
+        <S.Image source={{ uri: product.photo }} resizeMode="contain" />
         <S.NameAndPriceWrapper>
-          <S.Name>{name}</S.Name>
+          <S.Name>{product.name}</S.Name>
           <S.PriceWrapper>
-            <S.Price>R${price}</S.Price>
+            <S.Price>R${product.price}</S.Price>
           </S.PriceWrapper>
         </S.NameAndPriceWrapper>
-        <S.Description>{description}</S.Description>
+        <S.Description>{product.description}</S.Description>
       </S.Container>
-      <S.BuyButton activeOpacity={0.7} onPress={() => null}>
+      <S.BuyButton
+        activeOpacity={0.7}
+        onPress={() => onBuyButtonPress(product)}
+      >
         <ShoppingBagIcon />
         <S.BuyButtonText>COMPRAR</S.BuyButtonText>
       </S.BuyButton>
