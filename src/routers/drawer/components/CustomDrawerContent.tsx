@@ -4,10 +4,10 @@ import { TouchableOpacity } from "react-native";
 import { CloseCartIcon } from "../../../../assets/icons/CloseCartIcon";
 import { SideBarProductCard } from "./SideBarProductCard/SideBarProductCard";
 import S from "./styles";
-import { usarCarrinho } from "../../../stores/cartStore";
+import { useCartStore } from "../../../stores/cartStore";
 
 export function CustomDrawerContent(props: DrawerContentComponentProps) {
-  const { products, totalPrice } = usarCarrinho();
+  const { products, totalPrice } = useCartStore();
 
   return (
     <S.Container edges={["top"]}>

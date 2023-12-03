@@ -8,7 +8,7 @@ type HeaderProps = {
 };
 
 export function Header(props: HeaderProps) {
-  const { products } = useCartStore();
+  const { productCount } = useCartStore();
 
   return (
     <S.Header>
@@ -18,7 +18,7 @@ export function Header(props: HeaderProps) {
       </S.TextWrapper>
       <S.CartButton activeOpacity={0.7} onPress={props.onCartButtonPress}>
         <ShoppingCartIcon width={16} height={16} />
-        <S.TextCart>{products.length}</S.TextCart>
+        <S.TextCart>{productCount}</S.TextCart>
       </S.CartButton>
     </S.Header>
   );

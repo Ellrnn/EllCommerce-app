@@ -21,7 +21,7 @@ export function ProductCard({ onBuyButtonPress, product }: ProductCardProps) {
         <S.NameAndPriceWrapper>
           <S.Name>{product.name}</S.Name>
           <S.PriceWrapper>
-            <S.Price>R${product.price}</S.Price>
+            <S.Price>R${Number(product.price)}</S.Price>
           </S.PriceWrapper>
         </S.NameAndPriceWrapper>
         <S.Description>{product.description}</S.Description>
